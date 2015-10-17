@@ -1,15 +1,14 @@
 class Phrase
-	
 	def initialize(phrase)
 		@phrase = phrase
-	end
+	end	
 
 	def word_count
 		word_list = {}
-		@phrase.split(" ").each do |word|
+		@phrase.downcase.scan(/\w+/).each do |word|
 			word_list = process_words(word, word_list)
 		end
-		word_list
+		word_list 
 	end
 
 private
